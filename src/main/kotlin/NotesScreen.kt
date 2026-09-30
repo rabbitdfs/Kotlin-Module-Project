@@ -6,9 +6,7 @@ class NotesScreen(val menu: Menu, val archive: Archive) {
             for (note in archive.notes) {
                 items.add(MenuItem(note.name) { NoteScreen(menu, note).show() })
             }
-            val result = menu.showMenu("Архив ${archive.name}:", items)
-
-            if (!result) {
+            if (!menu.showMenu("Архив ${archive.name}:", items)) {
                 break
             }
         }

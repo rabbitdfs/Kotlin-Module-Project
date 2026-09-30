@@ -5,9 +5,7 @@ class NoteScreen(val menu: Menu, val note: Note) {
         )
 
         while (true) {
-            val result = menu.showMenu("Заметка ${note.name}:", items)
-
-            if (!result) {
+            if (!menu.showMenu("Заметка ${note.name}:", items)) {
                 break
             }
         }

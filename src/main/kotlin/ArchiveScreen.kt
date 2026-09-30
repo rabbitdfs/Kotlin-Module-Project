@@ -8,9 +8,8 @@ class ArchiveScreen(val menu: Menu) {
             for (archive in archives) {
                 items.add(MenuItem(archive.name) { NotesScreen(menu, archive).show() })
             }
-            val result = menu.showMenu("Список архивов:", items)
 
-            if (!result) {
+            if (!menu.showMenu("Список архивов:", items)) {
                 break
             }
         }
